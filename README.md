@@ -514,7 +514,7 @@ $$
 
 ## 6.1 Денормализованная схема
 
-![схема](./images/db-phis-denorm.png)
+![схема](./images/db-phis-fin.png)
 
 ## 6.2 Таблицы
 
@@ -665,7 +665,7 @@ $$
 | Clickhouse  |                       1 реплика для каждой партиции, RAID 6 |
 | Redis       |                           RDB snapshots, 5 master + 5 slave |
 | Backend     |                                    Deployment 10 подов, N+1 |
-| Web         |                                    StatefulSet 5 подов, N+! |
+| Web         |                                     Deployment 5 подов, N+1 |
 | L7 Balancer |                  Балансировка со стороны хостинг-провайдера |
 | L4 Balancer | N+2 для балансировщиков в стороны origin, N+1 для остальных |
 | K8s         |                                             5 control plane |
@@ -687,3 +687,4 @@ $$
 
 # 10 Схема проекта
 
+![схема](./images/project-scheme.png)
