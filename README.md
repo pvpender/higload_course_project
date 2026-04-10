@@ -666,8 +666,8 @@ $$
 | Redis       |                           RDB snapshots, 5 master + 5 slave |
 | Backend     |                                    Deployment 10 подов, N+1 |
 | Web         |                                     Deployment 5 подов, N+1 |
-| L7 Balancer |                  Балансировка со стороны хостинг-провайдера |
-| L4 Balancer | N+2 для балансировщиков в стороны origin, N+1 для остальных |
+| L7 Balancer | N+2 для балансировщиков в стороны origin, N+1 для остальных |
+| L4 Balancer |                  Балансировка со стороны хостинг-провайдера |
 | K8s         |                                             5 control plane |
 
 ## 9.2 Отказ компонентов
