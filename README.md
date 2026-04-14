@@ -659,16 +659,15 @@ $$
 
 | Компонент   |                                       Способ резервирования |
 | :---------- | ----------------------------------------------------------: |
-| RustFS      |                                          RAID 6, N + 1, CDN |
+| RustFS      |                                                       4 + 2 |
 | Qdrant      |                                               N + 1, RAID 6 |
 | PostgresSQL |      1 master + (2/4) replicas, PG_DUMP раз в сутки, RAID 6 |
-| Clickhouse  |                       1 реплика для каждой партиции, RAID 6 |
+| Clickhouse  |                               1 реплика для каждой партиции |
 | Redis       |                           RDB snapshots, 5 master + 5 slave |
-| Backend     |                                    Deployment 10 подов, N+1 |
-| Web         |                                     Deployment 5 подов, N+1 |
+| Backend     |                                    Deployment 10 подов, 1+2 |
 | L7 Balancer | N+2 для балансировщиков в стороны origin, N+1 для остальных |
 | L4 Balancer |                  Балансировка со стороны хостинг-провайдера |
-| K8s         |                                             5 control plane |
+| K8s         |                       5 control plane, 3 avaliability zones |
 
 ## 9.2 Отказ компонентов
 
@@ -687,6 +686,6 @@ $$
 
 # 10 Схема проекта
 
-![схема](./images/project-scheme.png)
+![схема](./images/project-scheme-fixed.png)
 
 # 11 Выбор оборудования и хостинга
